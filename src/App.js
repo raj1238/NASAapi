@@ -219,11 +219,27 @@ function App() {
               </div> 
 
               <div className="row mt-5">
-                  hello
+                  
                 <hr/>
-                {
-                  listofAster && listofAster.name 
-                }
+                
+                 {listofAster &&
+                  listofAster.map(aster => {
+                    return (
+                      <div className="col-md-4">
+                          <div className="card mb-5" style={{width: '18rem'}}>
+                            <div className ="card-header">
+                              {aster.date}
+                            </div>
+                            <ul className ="list-group list-group-flush">
+                              <li className ="list-group-item">Asteroid ID : {aster.id}</li>
+                              <li className ="list-group-item">Asteroid Name : {aster.name}</li>
+                              <li className ="list-group-item">Asteroid magnitude : {aster.magnitude}</li>
+                            </ul>
+                            <hr/>
+                          </div>
+                      </div>
+                    );
+                 })}
             </div>     
         </div>
     </div>
